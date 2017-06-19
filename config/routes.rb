@@ -1,11 +1,20 @@
 Rails.application.routes.draw do
+
+  resources :blogs, only: [:index, :new, :create, :edit, :update, :destroy]do
+    collection do
+      post :confirm
+    end
+  end
   
-  get 'blogs' =>'blogs#index'
-  
-  resources :blogs, only: [:index, :new, :create, :edit, :update]
-  resources :contacts, only: [:new, :create]
-  
-  # get'blogs' =>'blogs#index'
+  resources :contacts, only: [:new, :create]do
+    collection do
+      post :confirm
+    end
+  end
+    root 'top#index'
+    
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -17,7 +26,7 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
+    
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
@@ -60,4 +69,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
