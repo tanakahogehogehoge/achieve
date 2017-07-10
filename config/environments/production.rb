@@ -78,7 +78,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 end
 
-config.action_mailer.default_url_options = { host: 'https://mighty-basin-72558.herokuapp.com/blogs' }
+config.action_mailer.default_url_options = { host: 'https://enigmatic-crag-81405.herokuapp.com/blogs' }
 ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings =
 {
