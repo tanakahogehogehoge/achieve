@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :poems, only: [:index]
+  resources :poems, only: [:index, :show]
 
   resources :contacts, only: [:new, :create]do
     collection do
