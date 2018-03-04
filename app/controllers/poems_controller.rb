@@ -4,6 +4,6 @@ class PoemsController < ApplicationController
   end
 
   def show
-    
+    #hogehoge
   end
 end
